@@ -84,6 +84,7 @@ class InternUdemyChapter(UdemyChapters):
             self._lectures_count    = chapter['lectures_count']
         except:
             print "No lectures found for " + chapter['chapter_title']
+            self._lectures_count    = 0
         self._lectures          = [InternUdemyLecture(z) for z in chapter['lectures']]
 
 
