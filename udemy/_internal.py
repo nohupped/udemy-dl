@@ -80,7 +80,10 @@ class InternUdemyChapter(UdemyChapters):
         self._chapter_title     = chapter['chapter_title']
         self._unsafe_title      = chapter['unsafe_chapter']
         self._chapter_index     = chapter['chapter_index']
-        self._lectures_count    = chapter['lectures_count']
+        try:
+            self._lectures_count    = chapter['lectures_count']
+        except:
+            print "No lectures found for " + chapter['chapter_title']
         self._lectures          = [InternUdemyLecture(z) for z in chapter['lectures']]
 
 
